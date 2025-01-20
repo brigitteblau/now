@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/titulo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.titulo {
+  font-family: 'MyFont', sans-serif; 
+  color: red;
+  font-size: 60px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header img {
+  width: 90px;
+  height: 90px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.heart-icon svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
