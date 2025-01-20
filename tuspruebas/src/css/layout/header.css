@@ -6,23 +6,65 @@
 }
 
 .titulo {
-  font-family: 'MyFont', sans-serif; 
+  font-family: 'MyFont', sans-serif;
   color: red;
-  font-size: 60px;
+  font-size: 30px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
+  position: sticky;
+  top: 0 ;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
 }
 
 .header img {
   width: 90px;
   height: 90px;
 }
+.selects {
+  margin: 20px;
+ font-size: 20px;
+ padding: 20px 20px;
+ 
 
+}
+.selects select {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+   text-decoration: solid;
+   letter-spacing: 2px;
+}
+.selects select:hover{
+  background-color: #4b9ea6 ;
+  cursor: pointer;
+  scale: 1.1;
+  border: none;
+  color: white;
+}
+.selects option{
+  background-color: #ffffff ;
+  cursor: pointer;
+  scale: 1.1;
+  border: 1px black solid;
+  color: black;
+  letter-spacing: 2px;
+}
+.selects option:hover{
+  background-color: #4b9ea6 ;
+  cursor: pointer;
+  scale: 1.1;
+  color: black;
+}
 .header-icons {
   display: flex;
   align-items: center;
@@ -31,7 +73,6 @@
 .heart-icon svg {
   width: 30px;
   height: 30px;
-  margin-right: 20px;
+  margin-left: 20px;
   cursor: pointer;
 }
-
