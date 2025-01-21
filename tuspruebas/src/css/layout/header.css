@@ -8,16 +8,24 @@
 .titulo {
   font-family: 'MyFont', sans-serif;
   color: red;
-  font-size: 30px;
+  font-size: clamp(28px, 5vw, 40px); /* Ajuste responsivo: mínimo 28px, máximo 40px */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra más suave y natural */
+  text-align: center; /* Centrado opcional */
+  margin: 10px 5px; /* Espaciado opcional */
 }
+
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 10px;
   position: sticky;
   top: 0 ;
+}
+.header.sticky {
+  background-color: #f5efef; 
+  transition: background-color 0.3s ease; 
 }
 
 .header-content {
@@ -26,45 +34,78 @@
 }
 
 .header img {
-  width: 90px;
-  height: 90px;
+  width: clamp(70px, 90px, 120px); /* Ajuste responsivo: mínimo 70px, máximo 120px */
+  height: clamp(70px, 90px, 120px); /* Asegúrate de que height también sea responsivo */
 }
+
 .selects {
   margin: 20px;
- font-size: 20px;
- padding: 20px 20px;
- 
-
+  font-size: 20px;
+  padding: 20px 20px;
 }
-.selects select {
-  padding: 10px;
+
+.custom-select {
+  border: none;
+  position: relative;
+  display: inline-block;
+  width: 200px;
   font-size: 16px;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.selected-option {
+  padding: 10px 10px;
   border: none;
   border-radius: 50px;
-   text-decoration: solid;
-   letter-spacing: 2px;
-}
-.selects select:hover{
-  background-color: #4b9ea6 ;
-  cursor: pointer;
-  scale: 1.1;
-  border: none;
-  color: white;
-}
-.selects option{
-  background-color: #ffffff ;
-  cursor: pointer;
-  scale: 1.1;
-  border: 1px black solid;
-  color: black;
+  text-decoration: solid;
   letter-spacing: 2px;
-}
-.selects option:hover{
-  background-color: #4b9ea6 ;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
-  scale: 1.1;
-  color: black;
+  text-align: center;
 }
+
+.selected-option:hover {
+  background-color: #4b9ea6;
+  color: white;
+  scale: 1.1;
+  border-radius: 50px;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 50px;
+  display: none;
+  z-index: 100000;
+  border: none;
+}
+
+.custom-select:hover .options {
+  display: block;
+}
+
+.option {
+  padding: 10px 10px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 50px;
+}
+
+.option:hover {
+  background-color: #4b9ea6;
+  color: white;
+  scale: 1.1;
+  border-radius: 50px;
+  
+}
+
 .header-icons {
   display: flex;
   align-items: center;
@@ -73,6 +114,7 @@
 .heart-icon svg {
   width: 30px;
   height: 30px;
-  margin-left: 20px;
+  margin-left: 10%;
+  margin-right: 2%;
   cursor: pointer;
 }
