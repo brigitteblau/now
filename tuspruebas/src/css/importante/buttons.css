@@ -1,0 +1,79 @@
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  width: 100%;
+  font-size: 14px;
+}
+
+.radio-inputs .radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 0 1 auto;
+  text-align: center;
+  margin: 0 0.5rem;
+  overflow: hidden;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-radius: 3%;
+  color: #242323;
+  background-color: #FFF;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  position: relative;
+  z-index: 1; 
+}
+
+.radio-inputs .radio .name::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: #4b9ea6;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  z-index: -1; 
+}
+
+.radio-inputs .radio .name:hover {
+  color: #FFF;
+  background-color: transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.radio-inputs .radio .name:hover::before {
+  width: 150%;
+  height: 150%;
+}
+
+.radio-inputs .radio input:checked + .name {
+  color: #FFF; 
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.radio-inputs .radio input:checked + .name::before {
+  width: 120%;
+  height: 120%;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../css/pages/home.css";
 import Donation from "../layout/Donation";
+import All from "../importante/All";
 function Home() {
   const handleSearch = () => {
     alert("Función de búsqueda no implementada aún."); // Cambia esto con tu lógica de búsqueda
@@ -16,8 +17,7 @@ function Home() {
             <b className="highlight-text">búscalas</b>
           </h1>
         </div>
-
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <div className="input-wrapper">
             <input
               type="text"
@@ -54,11 +54,9 @@ function Home() {
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
       </header>
-
       <hr />
-
       <section className="counter-section">
         <h2>
           <span>1M alumnos salvados,</span> y sigue la cuenta
@@ -86,6 +84,11 @@ function Home() {
         </div>
       </section>
       <hr />
+     <section className="school-section">
+     <All/>
+
+     </section>
+      <hr/>
         <Donation/>
     </div>
   );

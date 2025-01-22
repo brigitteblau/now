@@ -1,0 +1,88 @@
+/* src/css/importante/years.css */
+.years-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+  max-height: auto; /* Permitir que crezca dinámicamente */
+  overflow: visible; /* Asegurar que el contenido no sea recortado */
+  margin: 5% auto; /* Centrar el contenedor */
+  display: flex;
+  flex-direction: column; /* Mantener el flujo de columna */
+  gap: 1rem; /* Espacio entre elementos */
+}
+
+.years-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Increased gap for better spacing between buttons */
+}
+
+.year-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.year-button {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem; /* Adjusted padding for better button sizing */
+  font-size: 1rem;
+  color: #212529;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.year-button.active {
+  background-color: #4b9ea6;
+  color: white;
+  border-color: #4b9ea6;
+}
+
+.arrow {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.year-button.active .arrow {
+  opacity: 1;
+  transform: translateY(0);
+  color: white;
+}
+
+.year-button:hover {
+  background-color: #4b9ea6;
+  color: white;
+  border-color: #4b9ea6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subjects-container {
+  position: relative;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid #4b9ea6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.no-years {
+  text-align: center;
+  color: #6c757d;
+  padding: 1rem;
+  margin: 0;
+}

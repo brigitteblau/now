@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "../../css/layout/header.css";
+import { getSchools } from "../../data/api";
 
 const Header = () => {
-  const [selectedOption, setSelectedOption] = useState("Descubrí");
+  const [schools, setSchools] = useState([]); 
+  const [selectedOption, setSelectedOption] = useState("Descubrí"); // Opción seleccionada
   const [isSticky, setIsSticky] = useState(false);
 
+  useEffect(() => {
+    const fetchSchools = async () => {
+      try {
+        const data = await getSchools(); 
+        setSchools(data);
+      } catch (err) {
+        console.error("Error al obtener las escuelas:", err);
+      }
+    };
+
+    fetchSchools();
+  }, []); // Solo se ejecuta una vez al cargar el componente
+
   const handleOptionClick = (option) => {
-    setSelectedOption(option);
+    setSelectedOption(option); 
   };
 
   useEffect(() => {
@@ -29,24 +44,19 @@ const Header = () => {
           <div className="custom-select">
             <div className="selected-option">{selectedOption}</div>
             <div className="options">
-              <div
-                className="option"
-                onClick={() => handleOptionClick("Ort Montañeses")}
-              >
-                Ort Montañeses
-              </div>
-              <div
-                className="option"
-                onClick={() => handleOptionClick("Ort Yatay")}
-              >
-                Ort Yatay
-              </div>
-              <div
-                className="option"
-                onClick={() => handleOptionClick("Martin Buber")}
-              >
-                Martin Buber
-              </div>
+              {schools.length === 0 ? (
+                <div className="option">Cargando...</div>
+              ) : (
+                schools.map((school, index) => (
+                  <div
+                    key={index}
+                    className="option"
+                    onClick={() => handleOptionClick(school.name)} // Al hacer clic, selecciona la escuela
+                  >
+                    {school.name} {/* Asume que cada escuela tiene un campo 'name' */}
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
