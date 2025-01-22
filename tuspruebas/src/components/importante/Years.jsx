@@ -33,7 +33,6 @@ const Years = ({ schoolId, onYearSelect, onSubjectSelect }) => {
   }, [schoolId]);
 
   const toggleYear = (yearId) => {
-    // Si el año ya está seleccionado, se cierra. De lo contrario, se selecciona.
     setSelectedYearId((prevId) => (prevId === yearId ? null : yearId));
     if (selectedYearId !== yearId) {
       onYearSelect(yearId);
