@@ -13,20 +13,20 @@
   
   .topic-button {
     border-radius: 4px;
-    background-color: #72baa8;
-    border: none;
+    border: 1px  #4b9ea6 solid;
     padding: 10px 15px;
-    color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .topic-button.active {
-    background-color: #65909b;
+    background-color:  #4b9ea6;
+    color: white;
   }
   
   .topic-button:hover {
-    background-color: #94cbba;
+    background-color: #4b9ea6;
+    color: white;
   }
   
   .images-container {

@@ -57,6 +57,10 @@ function Home() {
         </div> */}
       </header>
       <hr />
+      <section className="school-section">
+      <All />
+</section>
+<hr/>
       <section className="counter-section">
         <h2>
           <span>1M alumnos salvados,</span> y sigue la cuenta
@@ -84,11 +88,6 @@ function Home() {
         </div>
       </section>
       <hr />
-     <section className="school-section">
-     <All/>
-
-     </section>
-      <hr/>
         <Donation/>
     </div>
   );

@@ -7,7 +7,8 @@
 .subject-button {
   background-color: white;
   border-radius: 4px; 
-  padding: 2rem; 
+  padding: 15px;
+  border: 1px #6c757d solid;
   width: 100%;
   text-align: left;
   transition: all 0.2s ease-in-out;
@@ -23,6 +24,5 @@
   color: #6c757d;
   text-align: center;
   padding: 1rem;
-  font-size: 1.5rem; 
-  line-height: 1; 
+ font-size: 16px;
 }
