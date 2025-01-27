@@ -4,15 +4,11 @@
     text-align: center;
     padding: 20px;
   }
-/*   
+
   .home-header {
     padding: 50px 30px;
     margin: 0px;
-  } */
-  .home-header {
-    padding: 50px 30px;
-    margin: 0px;
-    position: static; /* Cambié a static para evitar efectos sticky */
+    position: static; 
     background-color: #fff;
     overflow: hidden;
   }
@@ -49,9 +45,9 @@
   
   .phrase h1 {
     font-family: 'Arial', sans-serif;
-    font-size: clamp(24px, 4vw, 36px); /* Responsivo: mínimo 24px, máximo 36px */
+    font-size: clamp(24px, 4vw, 36px); 
     color: #333;
-    text-transform: none; /* Predeterminado, para permitir estilos específicos */
+    text-transform: none;
   }
   
   .upper-text {
@@ -61,68 +57,12 @@
   }
   
   .highlight-text {
-    font-size: clamp(26px, 6vw, 40px); /* Un poco más grande que el resto */
+    font-size: clamp(26px, 6vw, 40px); 
     font-weight: bold;
-    color: #ff2f00; /* Un color fuerte para resaltar */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para efecto */
+    color: #ff2f00; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     letter-spacing: 1px; 
-    text-transform: uppercase; /* Mayúsculas */
-  }
-  .search-bar {
-    margin: 30px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .input-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 15px 50px 15px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .search-input:focus {
-    border-color: #bfc0c0;
-    box-shadow: 0 0 8px #4b9ea6;;
-    outline: none;
-  }
-  
-  .search-button {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-  }
-  
-  .search-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-  }
-  
-  .search-icon {
-    width: 24px;
-    height: 24px;
-    stroke: #333;
-    fill: none;
-    transition: stroke 0.3s ease;
-  }
-  
-  .search-button:hover .search-icon {
-    stroke: #e0e0e0;
+    text-transform: uppercase; 
   }
   .counter-section {
     padding: 40px 40px;
