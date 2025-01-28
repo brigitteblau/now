@@ -1,0 +1,36 @@
+.sobre-nosotros-container {
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .seccion {
+    margin-bottom: 30px;
+  }
+  
+  .yy {
+    color: #333;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .toggle-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline;
+    margin-left: 10px;
+    text-decoration: none;
+  }
+  
+  .toggle-button:hover {
+    text-decoration: underline;  
+  }
+  
+  .contenido {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 10px;
+  }

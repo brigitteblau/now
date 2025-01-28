@@ -25,6 +25,17 @@
     margin-bottom: 5px;
     font-size: 14px;
   }
+  .foot-button{
+    background: none;
+    border: none;
+    color: white;
+    transition: color 0.3s;
+    font-size: 14px;
+  padding: 0;
+  }
+  .foot-button:hover{
+    text-decoration: underline;
+  }
   
   .footer-column li a {
     color: white;

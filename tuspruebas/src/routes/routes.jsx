@@ -2,11 +2,12 @@
     import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../components/pages/Home" ;
+import AboutUs from "../components/static/AboutUs" ;
 const AppRoutes = () => {
   return (
     <Routes>
        <Route path="/" element={<Home/>} />
-      <Route path="/about" element={<div>About page</div>} />
+      <Route path="/about" element={<AboutUs/>} />
       <Route path="/collaborate" element={<div>Collaborate page</div>} />
       <Route path="/join" element={<div>Join page</div>} />
       <Route path="/doing-good" element={<div>Doing Good page</div>} />

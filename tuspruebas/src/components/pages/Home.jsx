@@ -20,15 +20,15 @@ function Home() {
             <b className="highlight-text">búscalas</b>
           </h1>
         </div>
-        <Search/>
+        {/* <Search/> */}
       </header>
-      <hr />
+      {/* <hr /> */}
 <section className="school-section">
       <All />
 </section>
-<hr/>
+{/* <hr/> */}
 <CounterSection/>
-<hr />
+{/* <hr /> */}
  <Donation/>
     </div>
   );
