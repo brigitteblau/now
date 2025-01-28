@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../css/pages/home.css";
 import Donation from "../layout/Donation";
+import Modal from "../temporal/Modal";
 import All from "../importante/All";
 import Search from "../layout/Search";
 import CounterSection from "../layout/CounterSection";
@@ -10,6 +11,7 @@ function Home() {
 
   return (
     <div className="home">
+      <Modal/>
       <header className="home-header">
         <div className="phrase">
           <h1>
