@@ -1,21 +1,28 @@
 //src/components/importante/Years.jsx
 import React, { useState, useEffect } from "react";
 import { getYears } from "../../data/api";
-import Subjects from "./Subjects";  
+import Subjects from "./Subjects";
+import { useSchool } from "../../context/SchoolContext";
 import "../../css/importante/years.css";
 
-const Years = ({ schoolId, onYearSelect, onSubjectSelect }) => {
+const Years = ({ onYearSelect, onSubjectSelect }) => {
+  const { selectedSchoolId } = useSchool();
   const [years, setYears] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedYearId, setSelectedYearId] = useState(null);
+
+  // Reset selected year when school changes
+  useEffect(() => {
+    setSelectedYearId(null);
+  }, [selectedSchoolId]);
 
   useEffect(() => {
     const fetchYears = async () => {
       setLoading(true);
       setError(null);
       try {
-        const data = await getYears(schoolId);
+        const data = await getYears(selectedSchoolId);
         setYears(data);
       } catch (err) {
         setError("Error al obtener los años");
@@ -25,26 +32,41 @@ const Years = ({ schoolId, onYearSelect, onSubjectSelect }) => {
       }
     };
 
-    if (schoolId) {
+    if (selectedSchoolId) {
       fetchYears();
     } else {
       setYears([]);
     }
-  }, [schoolId]);
+  }, [selectedSchoolId]);
 
   const toggleYear = (yearId) => {
-    setSelectedYearId((prevId) => (prevId === yearId ? null : yearId));
-    if (selectedYearId !== yearId) {
-      onYearSelect(yearId);
-    }
+    setSelectedYearId((prevId) => {
+      const newId = prevId === yearId ? null : yearId;
+      if (newId !== null) {
+        onYearSelect(newId);
+      }
+      return newId;
+    });
   };
 
-  if (error) {
-    return <p>{error}</p>;
+  if (loading) {
+    return (
+      <div className="years-container">
+        <div className="years-content">
+          <p className="loading-text">Cargando años...</p>
+        </div>
+      </div>
+    );
   }
 
-  if (loading) {
-    return <p>Cargando años...</p>;
+  if (error) {
+    return (
+      <div className="years-container">
+        <div className="years-content">
+          <p className="error-text">{error}</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -52,8 +74,8 @@ const Years = ({ schoolId, onYearSelect, onSubjectSelect }) => {
       <div className="years-content">
         {years.length === 0 ? (
           <p className="no-years">
-            Disculpa, todavia no tenemos información :( <br />
-            Cuando puedas mandanos tus documentos y los subimos!
+            Disculpa, todavía no tenemos información :( <br />
+            ¡Cuando puedas mandanos tus documentos y los subimos!
           </p>
         ) : (
           years.map((year) => (
@@ -70,7 +92,7 @@ const Years = ({ schoolId, onYearSelect, onSubjectSelect }) => {
               {selectedYearId === year.id && (
                 <div className="subjects-container">
                   <Subjects
-                    schoolId={schoolId}
+                    schoolId={selectedSchoolId}
                     yearId={year.id}
                     onSubjectSelect={onSubjectSelect}
                   />

@@ -11,7 +11,7 @@
   margin: 5% auto; /* Centrar el contenedor */
   display: flex;
   flex-direction: column; /* Mantener el flujo de columna */
-  gap: 1rem; /* Espacio entre elementos */
+  gap: 1rem; 
 }
 
 .years-content {
@@ -30,7 +30,7 @@
   border: 1px solid #dee2e6;
   border-radius: 6px;
   padding: 0.75rem 1.25rem; /* Adjusted padding for better button sizing */
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #212529;
   cursor: pointer;
   transition: all 0.2s ease-in-out;

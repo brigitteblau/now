@@ -1,12 +1,15 @@
+//src/components/importante/Schools
 import React, { useState, useEffect } from "react";
-import { getSchools } from "../../data/api"; 
+import { getSchools } from "../../data/api";
 import Loader from "../shared/Loader";
 import "../../css/importante/buttons.css";
+import { useSchool } from "../../context/SchoolContext";
 
 const Schools = ({ onSchoolSelect }) => {
   const [schools, setSchools] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true); // Añadir estado de carga
+  const [loading, setLoading] = useState(true);
+  const { selectedSchoolId, handleSchoolSelect } = useSchool();
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -19,12 +22,16 @@ const Schools = ({ onSchoolSelect }) => {
       } finally {
         setTimeout(() => {
           setLoading(false);
-        }, 5000); // Retraso de 2 segundos (ajústalo como desees)
+        });
       }
     };
-
     fetchSchools();
   }, []);
+
+  const handleSchoolClick = (school) => {
+    handleSchoolSelect(school.id, school.name);
+    onSchoolSelect(school.id);
+  };
 
   if (loading) {
     return <Loader />;
@@ -41,7 +48,8 @@ const Schools = ({ onSchoolSelect }) => {
           <input
             type="radio"
             name="radio"
-            onClick={() => onSchoolSelect(school.id)} // Notifica al padre la escuela seleccionada
+            checked={selectedSchoolId === school.id}
+            onChange={() => handleSchoolClick(school)}
           />
           <span className="name">{school.name}</span>
         </label>

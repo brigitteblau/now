@@ -7,7 +7,7 @@ const Search = () => {
           <div className="input-wrapper">
             <input
               type="text"
-              placeholder="Buscar materias, libros o temas"
+              placeholder="Buscar materias, temas, profesores"
               aria-label="Buscar contenido educativo"
               className="search-input"
             />

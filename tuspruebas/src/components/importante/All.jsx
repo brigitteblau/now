@@ -4,16 +4,17 @@ import Schools from "./Schools";
 import Years from "./Years";
 import Topics from "./Topics";
 import Images from "./Images";
+import { useSchool } from "../../context/SchoolContext";
 import "../../css/importante/all.css";
 
 const All = () => {
-  const [selectedSchoolId, setSelectedSchoolId] = useState(null);
+  const { selectedSchoolId } = useSchool();
   const [selectedYearId, setSelectedYearId] = useState(null);
   const [selectedSubjectId, setSelectedSubjectId] = useState(null);
   const [selectedTopicId, setSelectedTopicId] = useState(null);
 
   const handleSchoolSelect = (schoolId) => {
-    setSelectedSchoolId(schoolId);
+    // Reset dependent states when school changes
     setSelectedYearId(null);
     setSelectedSubjectId(null);
     setSelectedTopicId(null);
@@ -40,17 +41,13 @@ const All = () => {
         <h1>Solo lo mejor para los mejores</h1>
         <span>Encuentra pruebas, tp y resumenes para avanzar en tu educación.</span>
       </div>
-      
       <Schools onSchoolSelect={handleSchoolSelect} />
-      
       {selectedSchoolId && (
         <Years
-          schoolId={selectedSchoolId}
           onYearSelect={handleYearSelect}
           onSubjectSelect={handleSubjectSelect}
         />
       )}
-      
       {selectedSchoolId && selectedYearId && selectedSubjectId && selectedTopicId && (
         <Images
           schoolId={selectedSchoolId}

@@ -1,4 +1,4 @@
-//src/data.js
+//src/data/api.js
 
 const BASE_URL = "https://tus-pruebas-api.vercel.app";
 
