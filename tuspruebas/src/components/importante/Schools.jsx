@@ -19,7 +19,7 @@ const Schools = ({ onSchoolSelect }) => {
       } finally {
         setTimeout(() => {
           setLoading(false);
-        }, 1); // Retraso de 2 segundos (ajústalo como desees)
+        }, 5000); // Retraso de 2 segundos (ajústalo como desees)
       }
     };
 
