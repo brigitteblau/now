@@ -57,9 +57,11 @@
     font-weight: bold;
     cursor: pointer;
     transition: color 0.2s ease;
+   color: #e15e40;
   }
   
   .close-button:hover {
+    scale: 1.1;
     color: #ff2f00;
   }
 
@@ -72,9 +74,13 @@
   
   .popup-content a {
     color: #007bff;
-    text-decoration: underline;
+    text-decoration: none;
   }
-  
+  .popup-content a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0067d4;
+  }
   .popup-content ul {
     margin-top: 10px;
     padding-left: 20px;

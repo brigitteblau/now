@@ -64,56 +64,6 @@
     letter-spacing: 1px; 
     text-transform: uppercase; 
   }
-  .counter-section {
-    padding: 40px 40px;
-  }
-  
-  .counter-section h2 {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .counters {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-  }
-  
-  .counter {
-    text-align: center;
-  }
-  
-  .counter h3 {
-    font-size: 40px;
-    margin: 0;
-  }
-  
-  .counter p {
-    margin: 5px 0;
-  }
-  
-  .badge {
-    display: inline-block;
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 20px;
-    margin-top: 10px;
-    color: white;
-  }
-  
-  .badge.purple {
-    background-color: #a885d8;
-  }
-  
-  .badge.orange {
-    background-color: #ffa07a;
-  }
-  
-  .badge.green {
-    background-color: #4caf50;
-  }
-  
   .school-section{
     display: flex;
     justify-content: center;

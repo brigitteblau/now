@@ -13,6 +13,5 @@
     margin-bottom: 0px;
 }
 .titulo-div span{
-    font-size: clamp(14px, 1vw, 24px);  
     color: rgb(75, 74, 74);
 }

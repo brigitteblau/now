@@ -62,8 +62,8 @@
   letter-spacing: 2px;
   cursor: pointer;
   text-align: center;
-  background-color: #ffffff;
-  transition: background-color 0.3s, transform 0.3s;
+  background-color: transparent;
+  transition: background-color 0.4s, transform 0.4s;
 }
 
 .selected-option:hover {
@@ -77,8 +77,8 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: #ffffff;
-  border-radius: 10px;
+  background: transparent;
+  border-radius: 15px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -96,6 +96,7 @@
 .option {
   padding: 10px 10px;
   text-align: center;
+  margin: 2%;
   cursor: pointer;
   letter-spacing: 2px;
   transition: background-color 0.3s, transform 0.3s;
